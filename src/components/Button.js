@@ -52,7 +52,7 @@ const Button = () => {
       if (data.event === 'counterUpdate') {
         setCounter(prevCounter => data.data); // Use functional update form
     console.log('counter', data.data);
-    console.log('counter', counter);
+    // console.log('counter', counter);
       }
     };
 
@@ -67,7 +67,9 @@ const Button = () => {
       }
     };
   }, []); // Run once when component mounts
-
+  useEffect(() => {
+    console.log('useeffect counter', counter);
+  }, [counter]);
   const incrementCounter = () => {
     if (socket && socket.readyState === WebSocket.OPEN) {
       socket.send('increment'); // Send 'increment' message if socket is open
