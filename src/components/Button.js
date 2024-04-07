@@ -50,7 +50,9 @@ const Button = () => {
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
       if (data.event === 'counterUpdate') {
-        setCounter(data.data);
+        setCounter(prevCounter => data.data); // Use functional update form
+    console.log('counter', data.data);
+    console.log('counter', counter);
       }
     };
 
