@@ -40,7 +40,7 @@ const Button = () => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ws = new WebSocket('wss://pebble-sudden-fontina.glitch.me');
+    const ws = new WebSocket('wss://pebble-sudden-fontina.glitch.me/');
 
     ws.onopen = () => {
       console.log('WebSocket connection established.');
